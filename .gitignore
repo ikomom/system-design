@@ -17,3 +17,10 @@ _book
 
 # Mac OS junk files
 .DS_Store
+
+# VitePress build artifacts
+.vitepress/cache
+.vitepress/dist
+
+# Local git worktrees
+.worktrees/

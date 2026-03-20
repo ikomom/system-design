@@ -8,6 +8,24 @@
 <https://soulmachine.gitbooks.io/system-design/content/cn/>
 
 
+# 本地预览文档站
+
+项目已经接入 `VitePress`，可以在仓库根目录执行：
+
+```bash
+npm install
+npm run docs:dev
+```
+
+生成静态站点：
+
+```bash
+npm run docs:build
+```
+
+如果部署在子路径（例如 GitHub Pages 的 `/system-design/`），可在构建环境里设置 `VITEPRESS_BASE`。
+
+
 # Community
 
 Github: <https://www.github.com/soulmachine/system-design>

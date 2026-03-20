@@ -66,7 +66,7 @@
 
 可以抓包看看新浪微博的短网址是怎么做的，使用 Chrome 浏览器，访问这个URL <http://t.cn/RX2VxjI>，是我事先发微博自动生成的短网址。来抓包看看返回的结果是啥，
 
-![](http://cn.soulmachine.me/images/tinyurl-302.png)
+![](../images/legacy/tinyurl-302.png)
 
 可见新浪微博用的就是302临时重定向。
 

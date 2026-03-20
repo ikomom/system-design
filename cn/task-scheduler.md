@@ -294,7 +294,7 @@ JDK里还有一个[ScheduledThreadPoolExecutor](http://hg.openjdk.java.net/jdk8/
 
 时间轮(HashedWheelTimer)其实很简单，就是一个循环队列，如下图所示，
 
-![](http://upload-images.jianshu.io/upload_images/584578-044ce81079679c1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](../images/legacy/task-scheduler-delayqueue.png)
 
 上图是一个长度为8的循环队列，假设该时间轮精度为秒，即每秒走一格，像手表那样，走完一圈就是8秒。每个格子指向一个任务集合，时间轮无限循环，每转到一个格子，就扫描该格子下面的所有任务，把时间到期的任务取出来执行。
 
