@@ -1,3 +1,5 @@
+# 分布式ID生成器
+
 如何设计一个分布式ID生成器(Distributed ID Generator)，并保证ID按时间粗略有序？
 
 

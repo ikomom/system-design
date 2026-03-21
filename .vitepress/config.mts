@@ -28,6 +28,9 @@ export default defineConfig({
   description: '系统设计面试题精选',
   srcExclude: ['docs/superpowers/**', '**/SUMMARY.md', 'README.md', 'cn/README.md', 'cn/bigdata/README.md'],
   lastUpdated: true,
+  markdown: {
+    math: true
+  },
   head: [
     ['link', { rel: 'icon', href: `${base}logo.svg` }],
     ['meta', { name: 'theme-color', content: '#a34a1f' }],
