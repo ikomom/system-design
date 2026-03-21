@@ -4,9 +4,8 @@ import { readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { createMarkdownRenderer, disposeMdItInstance } from 'vitepress';
 
-import siteConfig from '../.vitepress/config.mts';
-
 const rootDir = path.resolve('cn');
+const configSource = readFileSync(path.resolve('.vitepress/config.mts'), 'utf8');
 const excluded = new Set([
   'README.md',
   'SUMMARY.md'
@@ -50,7 +49,7 @@ test('method page emphasis renders only the intended keywords', async () => {
 
 test('tinyurl page formulas render as math instead of raw dollar delimiters', async () => {
   disposeMdItInstance();
-  const md = await createMarkdownRenderer(process.cwd(), siteConfig.markdown, siteConfig.base);
+  const md = await createMarkdownRenderer(process.cwd(), { math: true }, '/');
   const content = readFileSync(path.join(rootDir, 'tinyurl.md'), 'utf8');
   const formulaParagraph = content.split(/\r?\n/)[17];
 
@@ -58,6 +57,10 @@ test('tinyurl page formulas render as math instead of raw dollar delimiters', as
 
   assert.doesNotMatch(rendered, /\$\$/);
   assert.match(rendered, /mjx-container|MathJax/);
+});
+
+test('vitepress config enables markdown math rendering', () => {
+  assert.match(configSource, /markdown:\s*\{[\s\S]*math:\s*true/);
 });
 
 test('content markdown does not use inline double-dollar math delimiters', () => {

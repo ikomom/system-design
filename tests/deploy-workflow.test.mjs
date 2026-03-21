@@ -12,6 +12,7 @@ test('github pages workflow builds and deploys the VitePress site', () => {
   assert.match(workflow, /npm run docs:build/);
   assert.match(workflow, /path:\s*\.\/\.vitepress\/dist/);
   assert.match(workflow, /actions\/configure-pages@/);
+  assert.match(workflow, /enablement:\s*true/);
   assert.match(workflow, /actions\/upload-pages-artifact@/);
   assert.match(workflow, /actions\/deploy-pages@/);
 });
